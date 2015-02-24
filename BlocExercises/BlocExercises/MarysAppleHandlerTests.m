@@ -67,5 +67,23 @@
     XCTAssertEqual(cost, 24, @"Undiscounted vodka should be $24.");
 }
 
+- (void)testPerformanceWithIfElse {
+    [self measureBlock:^{
+        // Put your code to measure here...
+        for (int i = 0; i < 1000; i++) {
+            NSString *purchasableItem = [self.appleHandler itemMaryCanPurchaseForDollars:4];
+            XCTAssertEqualObjects(purchasableItem, @"get out of my store", @"If Mary has $4, she should be told to get out.");
+        }
+    }];
+}
 
+- (void)testPerformanceWithSwitch {
+    [self measureBlock:^{
+        // Put your code to measure here...
+        for (int i = 0; i < 1000; i++) {
+            NSString *purchasableItem = [self.appleHandler itemMaryCanPurchaseForDollarsWithASwitchStatement:4];
+            XCTAssertEqualObjects(purchasableItem, @"get out of my store", @"If Mary has $4, she should be told to get out.");
+        }
+    }];
+}
 @end

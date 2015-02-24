@@ -31,6 +31,9 @@
  */
 - (NSString *) itemMaryCanPurchaseForDollars:(NSInteger)dollars;
 
+- (NSString *) itemMaryCanPurchaseForDollarsWithASwitchStatement:(NSInteger)dollars;
+
+
 /**
  Indicates the cost of Apple-flavored vodka in dollars.
  
