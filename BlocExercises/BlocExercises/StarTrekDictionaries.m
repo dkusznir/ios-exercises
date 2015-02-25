@@ -39,7 +39,6 @@
 - (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary
 {
     /* WORK HERE */
-    //NSDictionary *dictionaryWithQuote;
     NSMutableDictionary *mutDict = [characterDictionary mutableCopy];
     
     [mutDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
