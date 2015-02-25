@@ -10,19 +10,60 @@
 
 @implementation NumberHandler
 
-- (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number {
+- (NSNumber *) numberThatIsTwiceAsBigAsNumber:(NSNumber *)number
+{
     /* WORK HERE */
-    return @0;
+    int intValue = [number intValue];
+    int doubleIntValue = (intValue * 2);
+    
+    NSNumber *doubleNumber = [NSNumber numberWithInt:doubleIntValue];
+    
+    return doubleNumber;
 }
 
-- (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
+- (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber
+{
     /* WORK HERE */
-    return @[];
+    NSArray *numbersArray = [[NSArray alloc] init];
+    
+    NSInteger minNumber = (number < otherNumber) ? number : otherNumber;
+    NSInteger maxNumber = (number > otherNumber) ? number : otherNumber;
+    
+    while (minNumber <= maxNumber)
+    {
+        numbersArray = [numbersArray arrayByAddingObject:[NSNumber numberWithInteger:minNumber]];
+        minNumber++;
+    }
+    
+    return numbersArray;
 }
 
-- (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
+- (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers
+{
     /* WORK HERE */
+    
+    if (arrayOfNumbers.count == 0)
+    {
+        NSLog(@"Empty Array!");
+    }
+    
+    else
+    {
+        __block NSNumber *findLowNumber = [arrayOfNumbers objectAtIndex:0];
+        
+        [arrayOfNumbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if ([obj integerValue] < [findLowNumber integerValue])
+            {
+                findLowNumber = obj;
+            }
+
+        }];
+    
+        NSInteger lowestNumber = [findLowNumber integerValue];
+    
+        return lowestNumber;
+    }
+    
     return 0;
 }
-
 @end
