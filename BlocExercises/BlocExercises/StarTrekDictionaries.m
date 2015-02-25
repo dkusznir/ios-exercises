@@ -10,19 +10,44 @@
 
 @implementation StarTrekDictionaries
 
-- (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
+- (NSString *)favoriteDrinkForStarTrekCharacterDictionary:(NSDictionary *)characterDictionary
+{
     /* WORK HERE */
-    return @"";
+    NSString *faveDrink;
+    
+    if ([characterDictionary objectForKey:@"favorite drink"])
+    {
+        faveDrink = [characterDictionary valueForKey:@"favorite drink"];
+    }
+    
+    else
+    {
+        faveDrink = nil;
+    }
+    
+    return faveDrink;
 }
 
-- (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray {
+- (NSArray *)arrayOfFavoriteDrinksForStarTrekCharacters:(NSArray *)charactersArray
+{
     /* WORK HERE */
-    return @[];
+    NSArray *faveDrinkArray = [charactersArray valueForKey:@"favorite drink"];
+    
+    return faveDrinkArray;
 }
 
-- (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary {
+- (NSDictionary *)dictionaryWithQuoteAddedToStarTrekCharacterDictionary:(NSDictionary *)characterDictionary
+{
     /* WORK HERE */
-    return @{};
+    //NSDictionary *dictionaryWithQuote;
+    NSMutableDictionary *mutDict = [characterDictionary mutableCopy];
+    
+    [mutDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
+    {
+        [mutDict setObject:obj forKey:@"quote"];
+    }];
+    
+    return mutDict;
 }
 
 @end
