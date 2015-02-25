@@ -51,7 +51,8 @@
     {
         __block NSNumber *findLowNumber = [arrayOfNumbers objectAtIndex:0];
         
-        [arrayOfNumbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [arrayOfNumbers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+        {
             if ([obj integerValue] < [findLowNumber integerValue])
             {
                 findLowNumber = obj;
