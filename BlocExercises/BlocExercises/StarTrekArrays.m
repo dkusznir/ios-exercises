@@ -41,9 +41,9 @@
     /* WORK HERE */
     BOOL result;
     NSPredicate *predicateTest = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] 'worf'"];
-    NSArray *hasWorf = [characterArray filteredArrayUsingPredicate:predicateTest];
+    NSArray *allWorfs = [characterArray filteredArrayUsingPredicate:predicateTest];
     
-    if (hasWorf.count == 0)
+    if (allWorfs.count == 0)
     {
         result = NO;
     }
