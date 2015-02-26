@@ -10,6 +10,9 @@
 
 @interface StuffRememberer : NSObject
 
+@property (nonatomic, strong) NSMutableArray *myArray;
+@property (assign) CGFloat myCGFloat;
+
 /*
  
  In this class, there are three pairs of methods.
