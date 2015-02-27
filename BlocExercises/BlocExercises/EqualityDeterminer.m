@@ -30,9 +30,9 @@
 - (BOOL) integer:(NSInteger)integer1 isGreaterThan:(NSInteger)integer2
 {
     /* WORK HERE */
-    BOOL checkIsEqual = (integer1 > integer2) ? YES : NO;
+    BOOL checkIsGreaterThan = (integer1 > integer2) ? YES : NO;
     
-    return checkIsEqual;
+    return checkIsGreaterThan;
 }
 
 @end
