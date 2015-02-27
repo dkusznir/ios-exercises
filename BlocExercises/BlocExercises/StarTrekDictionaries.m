@@ -43,7 +43,7 @@
     
     [mutDict enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
     {
-        [mutDict setObject:obj forKey:@"quote"];
+        [mutDict setObject:@"my quote goes here" forKey:@"quote"];
     }];
     
     return mutDict;
