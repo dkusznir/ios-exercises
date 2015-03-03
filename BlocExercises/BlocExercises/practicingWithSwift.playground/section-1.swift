@@ -47,16 +47,16 @@ func favoriteCheese(cheeseName: String) -> String
 func cheeseWithoutCheeseSuffix(cheeseName: String) -> String
 {
     var name = cheeseName
-    var range = cheeseName.rangeOfString("cheese", range: name)
+    var range = cheeseName.rangeOfString("cheese")
     
-    if (range = NSNotFound)
+    if (range == nil)
     {
         return name;
     }
     
     else
     {
-        let test = cheeseName.stringByReplacingCharactersInRange(range, withString: "")
+        let test = cheeseName.stringByReplacingCharactersInRange(range!, withString: "")
         return test
     }
 }
